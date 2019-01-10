@@ -28,10 +28,10 @@
     </div>
 
     {{#each burgers}}
-    {{#if devoured}}
+    {{#if devoured}} {{!-- {{#unless devoured}}   --}}
 
     <script>
-        var newDevourITem = "<div class='devoured-box'>{{burger_name}}</div><br>"
+        var newDevourITem = "<div class='devoured-box'>{{burger_name}} by {{joinCustomer.customer_name}}</div><br>"
         $(".devoured-container").append(newDevourITem);
     </script>
     {{!-- <div class="devoured-box">{{burger_name}} ==>DEVOURED</div><br> --}}
@@ -39,6 +39,7 @@
     {{else}}
     <script>
         var newUnDevourITem = "<div class='burger-box'>{{burger_name}} "
+            + "<input type='text' id='customer_name' name='name' placeholder='{{joinCustomer.customer_name}}'>"
             + "<button type='submit' class='devour-button' data-id='{{id}}' data-newdevour='{{devour}}'>devour</button></div><br>";
         $(".undevoured-container").append(newUnDevourITem);
     </script>

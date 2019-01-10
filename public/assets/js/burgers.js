@@ -1,13 +1,14 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-// Add a new burger into database ============================================
+	// Add a new burger into database ============================================
 	$(".create-form").on("submit", function (event) {
 		// Make sure to preventDefault on a submit event.
 		event.preventDefault();
 
 		var newBurger = {
 			burger_name: $("#burger_name").val().trim(),
-			devoured: false
+			devoured: false,
+			joinCustomerId: 1
 		};
 
 		// Send the POST request.
@@ -23,10 +24,19 @@ $(function () {
 		);
 	});
 
-	// Make a burger devoured ========================================================
+
+	// Make a burger devoured  and  Add a new customer into database ===============================
 	$(".devour-button").on("click", function (event) {
 		// Make sure to preventDefault on a submit event.
 		event.preventDefault();
+
+		var newCustomer = {
+			customer_name: $("#customer_name").val().trim(),
+		};
+
+		if (newCustomer.customer_name == "" || newCustomer.customer_name == "1") {
+			newCustomer.customer_name = "anonymous";
+		}
 
 		var id = $(this).data("id");
 		console.log("devoured id: " + id);
@@ -34,8 +44,10 @@ $(function () {
 		var newDevour = true;
 
 		var newDevourState = {
-			devoured: newDevour
+			devoured: newDevour,
+			customer_name: newCustomer.customer_name
 		};
+
 
 		// Send the PUT request.
 		$.ajax("/api/burgers/" + id, {
@@ -48,6 +60,14 @@ $(function () {
 				location.reload();
 			}
 		);
+
+
+
+
+
+
+
 	});
+
 
 });

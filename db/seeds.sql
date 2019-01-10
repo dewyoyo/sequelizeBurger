@@ -3,3 +3,6 @@
 INSERT INTO burgers (burger_name) VALUES ('Cheese Burger');
 INSERT INTO burgers (burger_name) VALUES ('Happy Meal');
 INSERT INTO burgers (burger_name) VALUES ('Chicken Sandwich'); 
+
+
+INSERT INTO joinCustomer (customer_name) VALUES ('anonymous'); 

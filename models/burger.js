@@ -1,6 +1,6 @@
 // burger table model
 module.exports = function(sequelize, DataTypes) {
-  var SeqBurgers = sequelize.define("SeqBurgers", {
+  var JoinBurgers = sequelize.define("JoinBurgers", {
     // timestamps: false,
     burger_name: {
       type: DataTypes.STRING,
@@ -16,7 +16,18 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return SeqBurgers;
+  JoinBurgers.associate = function(models) {
+    // We're saying that a JoinBurgers should belong to an joinCustomer
+    // A JoinBurgers can't be created without an joinCustomer due to the foreign key constraint
+    JoinBurgers.belongsTo(models.joinCustomer, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+
+  return JoinBurgers;
 };
 
 
