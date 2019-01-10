@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+header {
+	padding: 20px;
+	margin-bottom: 20px;
+	color: #333;
+	background: #ccc;
+}
+.main-container {
+    width: 70%;
+    padding: 30px;
+    float :right;
+    background-color: lightgoldenrodyellow;
+}
+.order-container {
+    width: 30%;
+    padding: 30px;
+    float: left;
+}
+.undevoured-h2{
+    width: 80%;
+    /* padding: 30px; */
+    text-align: left;
+    float :left;
+}
+.undevoured-container {
+    width: 65%;
+    padding: 0 30px;
+    float :left;
+}
+.devoured-h2{
+    width: 80%;
+    /* padding: 30px; */
+    text-align: left;
+    float: right;
+}
+.devoured-container {
+    width: 35%;
+    padding: 0 30px;
+    float: right;
+}
+.burger-box {
+    padding: 5px;
+    margin: 5px;
+    background: yellowgreen;
+    float: left;
+    width: 500px;
+    text-align: left;
+}
+.devoured-box {
+    padding: 5px;
+    margin: 5px;
+    background: teal;
+    float: right;
+    width: 200px;
+    text-align: left;
+}
+#burger-img {
+    width: 300px;
+    height: 200px;
+}
+input[type=text],
+{
+    display: block;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px solid #dddddd;
+    height: 100px;
+    background-color: black;
+}
+#order-button {
+    padding: 10px 30px;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    background: #333;
+    border: 0 none;
+}
+/* #eater_name{
+    float: right;
+} */
+.devour-button{
+    padding: 5px;
+    font-size: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    background: #333;
+    border: 0 none;
+    float: right;
+}
+/*  ##Screen = B/w 768px  */
+@media screen and (max-width: 768px) {
+    .main-container {
+        width: 100%;
+        padding: 30px;
+    }
+    .order-container {
+        width: 100%;
+        padding: 30px;
+    }
+    .undevoured-container {
+        width: 100%;
+        padding: 30px;
+    }
+    .devoured-container {
+        width: 100%;
+        padding: 30px;
+    }
+}
+
+/*  ##Screen = B/w 640px  */
+@media screen and (max-width: 640px) {
+    .main-container {
+        width: 100%;
+        padding: 30px;
+    }
+    .order-container {
+        width: 100%;
+        padding: 30px;
+    }
+    .undevoured-container {
+        width: 100%;
+        padding: 30px;
+    }
+    .devoured-container {
+        width: 100%;
+        padding: 30px;
+    }
+}
