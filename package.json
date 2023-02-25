@@ -1,25 +1,18 @@
 {
   "name": "sequelizeburger",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This app is created with MySQL2, Node, Express, Handlebars and Sequelize.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dewyoyo/sequelizeBurger.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dewyoyo/sequelizeBurger/issues"
-  },
-  "homepage": "https://github.com/dewyoyo/sequelizeBurger#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "express-handlebars": "^3.0.0",
-    "mysql2": "^1.6.4",
-    "sequelize": "^4.42.0"
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "mysql2": "^3.1.2",
+    "sequelize": "^6.29.0"
   }
 }
