@@ -12,9 +12,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set Handlebars.
+const Handlebars = require('handlebars');
 var exphndle = require("express-handlebars");
-app.engine("handlebars", exphndle.engine({ defaultLayout: "main" }));
+
+// Import function exported by newly installed node modules. 03/02/2023
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
+
+app.engine("handlebars", exphndle.engine({
+	defaultLayout: "main",
+	// ...implement newly added insecure prototype access 03/02/2023
+	handlebars: allowInsecurePrototypeAccess(Handlebars)
+}));
 app.set("view engine", "handlebars");
+
+
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/burgers_controller.js");
